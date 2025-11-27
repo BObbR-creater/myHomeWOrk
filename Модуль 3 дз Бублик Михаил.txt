@@ -1,0 +1,123 @@
+Easy
+
+1.Материнская плата - объединяет все компоненты компьютера.
+Процессор - занимается всеми задачами ПК, следует инструкциям которые мы ему даем, например пишем вывести, что то на монитор и он это выводит.
+Оперативная память - в оперативной памяти и хранятся все инструкции которые мы даем нашему ПК.
+Долгосрочная память - нужна для хранения информации больших объемов.
+
+2. Stack предназначен для статического распределения данных, а Heap для динамического.
+
+3. В Java существует вещественный, целочисленный, ссылочный, логический и символьный типы данных.
+
+4. Отличия в том, что примитивные тип хранят значение напрямую, а ссылочные типы хранят адреса объектов в памяти.
+
+5. Переменнная - область в памяти, предназначенная для хранения определенного типа данных.
+
+6. ! - отрицательный оператор, & - логическое умножение, | - логическое сложение.
+
+Задания:
+1)
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Напишите значения для a: ");
+        int a = scan.nextInt();
+        System.out.println("Напишите значения для b: ");
+        int b = scan.nextInt();
+
+        System.out.println("Вроде бы переменная a = " + b);
+        System.out.println("Вроде бы переменная b = " + a);
+
+    }
+}
+
+
+
+2)
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите 3 вещественных числа: ");
+
+        double a = scan.nextDouble();
+        double b = scan.nextDouble();
+        double c = scan.nextDouble();
+
+        double s = a + b + c;
+        System.out.println("Сумма этих чисел: " + s);
+
+        double j = a * b * c;
+        System.out.println("Произведение этих чисел: " + j);
+    }
+}
+
+
+
+Middle
+1)
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Сколько дней в месяце было отработано: ");
+        int dayInMonth = scan.nextInt();
+
+        System.out.println("Зарплата за день: ");
+        double money = scan.nextDouble();
+
+        double i = money * dayInMonth;
+        System.out.println("Зарплата рабочего за весь месяц: " + i);
+    }
+}
+
+
+2)
+import java.util.Scanner;
+
+public class Main1 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Будем считать дискриминант)");
+        System.out.println("Введи значения a, b и c");
+
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        int c = scan.nextInt();
+
+        int dis = (b * b) - 4 * a * c;
+        System.out.println("Дискриминант уравнения: " + dis);
+    }
+}
+
+
+3)
+import java.util.Scanner;
+
+public class Main2 {
+    public static void main(String[] args) {
+        String a = "HelloJava!";
+        // System.out.println("Поиск символа - " + s.indexOf('W'));
+        System.out.println("Номер символа J - " + a.indexOf("J"));
+        System.out.println("Строка в верхнем регистре: " + a.toUpperCase());
+    }
+}
+
+
+4)
+import java.util.Scanner;
+
+public class Main3 {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Напиши строку, а я посчитаю её длину ");
+        String a = scan.nextLine();
+
+        System.out.println("Длина вашей строки - " + a.length());
+    }
+}
