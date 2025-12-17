@@ -1,0 +1,217 @@
+Easy
+1. Алгоритм - последовательность инструкций для написания кода.
+Блок-схема - визуализация даже самого сложного процесса.
+Логические операции - операции позволяющие коду выполнить один из созданных блоков инструкций, в зависимости от условий.
+
+2. Для выполнения одного из условий программы, оператор if позволяет выбрать, какой блок инструкций выполнится.
+
+3.Оператор if проверяет условия, а оператор switch-case значения и после выполняет определённые инструкции.
+
+4. && - если одно из условий будет неверным, второе уже нет смысла проверять, напишет false (используется чаще)
+& - проверит оба условия и только потом выведит false 
+
+1)
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int x = scan.nextInt();
+        int y;
+        if (x > 0) {
+            y = 2 * x;
+            System.out.println("y = " + y );
+
+        }else if (x < 0) {
+            y = (-2 * x);
+            System.out.println("y = " + y );
+        }
+    }
+}
+
+2)
+import java.util.Scanner;
+
+public class Main1 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int season = scan.nextInt();
+        switch (season) {
+            case (1): {
+                System.out.println("Зима");
+                break;
+            }
+            case (2): {
+                System.out.println("Весна");
+                break;
+            }
+            case (3): {
+                System.out.println("Лето");
+                break;
+            }
+            case (4): {
+                System.out.println("Осень");
+                break;
+            }
+        }
+    }
+}
+
+Middle
+
+1)
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int c = scanner.nextInt();
+
+        int min = a;
+        if (b < min) min = b;
+        if (c < min) min = c;
+
+        int max = a;
+        if (b > max) max = b;
+        if (c > max) max = c;
+
+        int sum = a + b + c;
+        int average = sum / 3;
+
+        System.out.println("Минимум: " + min);
+        System.out.println("Максимум: " + max);
+        System.out.println("Среднее: " + average);
+    }
+}
+
+2)
+import java.util.Scanner;
+
+public class Main1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введи большее число: ");
+        double a = scanner.nextDouble();
+
+        System.out.println("Введи меньшее число: ");
+        double b = scanner.nextDouble();
+
+        double multiple = a % b;
+
+        if (multiple>0) {
+            System.out.println("Число не кратно, остаток = " +multiple);
+        } else {
+            System.out.println("Число кратно ");
+        }
+    }
+}
+
+3)
+import java.util.Scanner;
+
+public class Main2 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Введи стороны треугольника, а я скажу может ли существовать треугольник с такими сторонами. ");
+
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        int c = scan.nextInt();
+
+        if (a + b < c || a + c < b || c + b < a) {
+            System.out.println("No, Сумма любых двух сторон треугольника не может быть меньше третьей стороны!");
+        } else {
+            System.out.println("Yes");
+        }
+    }
+}
+
+4)
+import java.util.Scanner;
+
+public class Main3 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String products = scan.nextLine();
+
+        boolean eggs = products.contains("яйца");
+        boolean milk = products.contains("молоко");
+        boolean coffee = products.contains("кофе");
+
+        System.out.println("Можно приготовить:");
+
+        if (eggs && milk) {
+            System.out.println("омлет");
+        } else if (eggs) {
+            System.out.println("яичницу");
+        } else if (coffee && milk) {
+            System.out.println("кофе");
+        } else if ( !(eggs && milk) && !eggs && !(coffee && milk)) {
+            System.out.println("ничего");
+        }
+    }
+}
+
+5)
+import java.util.Scanner;
+
+public class Main4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введит параметры для a,b,c: ");
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int c = scanner.nextInt();
+
+        int D = b * b - 4 * a * c;
+
+        if(D >= 0){
+            System.out.println("Есть действительные корни! D = " + D);
+        } else {
+            System.out.println("Нет действительных корней, D = " + D);
+        }
+
+    }
+}
+
+Hard
+1)
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Площадь чего будем искать? Прямоугольника, Треугольника или Круга? ");
+        String S = scanner.next();
+        switch (S) {
+            case ("прямоугольник"): {
+                System.out.println("Введите значения для a и b: ");
+                int a = scanner.nextInt();
+                int b = scanner.nextInt();
+                int ploshad = a * b;
+                System.out.println("Площадь прямоугольника = " + ploshad);
+                break;
+            }
+            case ("треугольник"): {
+                System.out.println("Введите значения для a и h: ");
+                int a = scanner.nextInt();
+                int h = scanner.nextInt();
+                int ploshad = (a * h) / 2;
+                System.out.println("Площадь треугольника = " + ploshad);
+                break;
+            }
+            case ("круг"): {
+                System.out.println("Введите значения для r: ");
+                int a = scanner.nextInt();
+                double pi = Math.PI;
+                double ploshad = (a * a) * pi;
+                System.out.println("Площадь круга = " + ploshad);
+                break;
+            }
+        }
+    }
+}
